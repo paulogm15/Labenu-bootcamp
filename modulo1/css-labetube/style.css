@@ -1,0 +1,45 @@
+body {
+    background-color: darkgrey;
+}
+
+header {
+    display: flex;
+    background-color: rgb(226, 110, 15);
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 0 20px;
+  }
+
+#conteiner {
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    width: 100vw;
+    height: 100vh; 
+}
+
+.card-video img {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    color: white;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: rgb(65, 65, 65);
+    align-items: center;
+    height: 30px;
+}
+
+video {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    height: 50%;
+    width: 75%;
+}
+

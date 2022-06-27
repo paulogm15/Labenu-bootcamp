@@ -1,0 +1,1 @@
+Estava passando mal com enxaqueca hj e acabei não fazendo o projeto, e pra não ficar com falta aproveitei um projeto parecido que fiz em uma imersao dev feita pela alura. Vou tentar fazer durante o projeto durante o fds e enviar um novo commit ate domingo.
