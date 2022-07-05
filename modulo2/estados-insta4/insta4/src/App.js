@@ -2,6 +2,24 @@ import React from 'react';
 import styled from 'styled-components'
 import Post from './components/Post/Post';
 
+const arrayPosts = [
+  {
+    nomeUsuario: "Paulinha",
+    fotoUsuario: "https://picsum.photos/50/50",
+    fotoPost: "https://picsum.photos/200/150"
+  },
+  {
+    nomeUsuario: "João",
+    fotoUsuario: "https://picsum.photos/50/51",
+    fotoPost: "https://picsum.photos/200/151"
+  },
+  {
+    nomeUsuario: "Amanda",
+    fotoUsuario: "https://picsum.photos/50/52",
+    fotoPost: "https://picsum.photos/200/153"
+  }
+]
+
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -10,31 +28,17 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+  state = {
+    posts: arrayPosts,
+    userName: "",
+    userPhoto: "",
+    postPhoto: ""
+  }
   render() {
     return (
-      <div>
-        <MainContainer>
-          <Post
-            nomeUsuario={'paulinha'}
-            fotoUsuario={'https://picsum.photos/50/50?random=1'}
-            fotoPost={'https://picsum.photos/200/150?random=2'}
-          />
-        </MainContainer>
-        <MainContainer>
-          <Post
-            nomeUsuario={'amanada'}
-            fotoUsuario={'https://picsum.photos/50/50?random=3'}
-            fotoPost={'https://picsum.photos/200/150?random=4'}
-          />
-        </MainContainer>
-        <MainContainer>
-          <Post
-            nomeUsuario={'joao'}
-            fotoUsuario={'https://picsum.photos/50/50?random=5'}
-            fotoPost={'https://picsum.photos/200/150?random=6'}
-          />
-        </MainContainer>
-      </div>
+      <AppContainer>
+        
+      </AppContainer>
     );
   }
 }
