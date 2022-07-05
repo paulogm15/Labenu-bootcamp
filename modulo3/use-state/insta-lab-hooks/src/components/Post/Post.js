@@ -10,20 +10,52 @@ import iconeComentario from '../../img/comment_icon.svg'
 
 const Post = (props) => {
 
+  const [like, setLike] = useState(false)
+
   const [numeroCurtidas, setNumeroCurtidas] = useState(0)
 
-  const curtida = (event) => {
-    setNumeroCurtidas (event.target.value)
-  }
+  const [mandarComentario, setMandarComentario] = useState(false)
+
+  const [numeroComentarios, setNumeroComentarios] = useState(0)
+
+  const [todosComentarios, setTodosComentarios] = useState([])
   
   const onClickCurtida = () => {
+    if (like) {
+      setLike(false)
+      setNumeroCurtidas(0)
+    }
+    else {
+      setLike(true)
+      setNumeroCurtidas(1)
+    }
   };
 
   const onClickComentario = () => {
+    setMandarComentario(!mandarComentario)
   };
 
   const enviarComentario = (comentario) => {
+    setNumeroComentarios(numeroComentarios + 1)
+    const novaListaDeComentarios = [...todosComentarios, comentario]
+    setMandarComentario(false)
+    setTodosComentarios(novaListaDeComentarios)
   }
+
+  const iconeCurtida = like ? iconeCoracaoPreto : iconeCoracaoBranco
+
+  const commentSection = mandarComentario ? (
+    <SecaoComentario enviarComentario={enviarComentario}/>
+  ) : (
+    todosComentarios.map((comentario) => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    }
+    )
+  )
 
   return (
     <PostContainer>
@@ -36,18 +68,18 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {commentSection}
     </PostContainer>
   )
 }
