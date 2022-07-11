@@ -5,11 +5,12 @@ import CardUser from './components/CardUser';
 
 const AppContainer = styled.div`
   border: 1px solid black;
-  height: 100vh;
+  height: 90vh;
   width: 90%;
   max-width: 400px;
   box-sizing: border-box;
   margin: auto;
+  margin-top: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
