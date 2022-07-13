@@ -1,10 +1,11 @@
 import React from "react";
+import { Router } from "./routes/Router";
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Projeto LabeX</h1>
+    <div>
+      <Router/>
     </div>
   );
 }
