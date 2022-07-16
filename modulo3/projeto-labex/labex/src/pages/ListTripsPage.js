@@ -4,7 +4,8 @@ import React from "react";
 function ListTripsPage() {
   return (
     <div>
-        ListTripsPage
+        <h1>ListTripsPage</h1>
+        <p>Aqui vão aparecer as viagens</p>
     </div>
   );
 }
