@@ -1,6 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components';
 
+
+const ButtonsHome = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
 const HomePage = () => {
   const VerViagens = useNavigate()
@@ -16,8 +23,8 @@ const HomePage = () => {
   return (
     <div>
         <h2>LabeX</h2>
-        <button onClick={goToViagens}>Ver viagens</button>
-        <button onClick={goToLogin}>Área Admin</button>
+        <ButtonsHome onClick={goToViagens}>Ver viagens</ButtonsHome>
+        <ButtonsHome onClick={goToLogin}>Área Admin</ButtonsHome>
     </div>
   );
 }
