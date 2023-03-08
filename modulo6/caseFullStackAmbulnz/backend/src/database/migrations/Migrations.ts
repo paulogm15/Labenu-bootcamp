@@ -1,6 +1,7 @@
 import { BaseDatabase } from "../BaseDatabase"
 import { OrderDatabase } from "../OrderDatabase"
 import { PizzaDatabase } from "../PizzaDatabase"
+import { pizzasSeed, ingredientsSeed, pizzasIngredientsSeed } from "./data"
 
 class Migrations extends BaseDatabase {
     execute = async () => {
@@ -67,9 +68,17 @@ class Migrations extends BaseDatabase {
     }
 
     insertData = async () => {
-        // await BaseDatabase
-        //     .connection(UserDatabase.TABLE_USERS)
-        //     .insert(users)
+        await BaseDatabase
+            .connection(PizzaDatabase.TABLE_PIZZAS)
+            .insert(pizzasSeed)
+
+        await BaseDatabase
+            .connection(PizzaDatabase.TABLE_INGREDIENTS)
+            .insert(ingredientsSeed)
+
+        await BaseDatabase
+            .connection(PizzaDatabase.TABLE_PIZZAS_INGREDIENTS)
+            .insert(pizzasIngredientsSeed)
     }
 }
 
